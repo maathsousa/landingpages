@@ -1,0 +1,10 @@
+# artefatos locais de teste e ferramentas
+.playwright-mcp/
+**/graphify-out/
+.impeccable/review/
+**/hook.cache.json
+*.png
+!**/img/*.png
+.DS_Store
+Thumbs.db
+desktop.ini
