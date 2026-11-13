@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
+  SEGURANÇA: a página só carrega arquivos dela mesma (fontes, GSAP, vídeo e fotos estão em /assets).
+  Ao adicionar Google Analytics, Meta Pixel ou Google Ads, inclua os domínios deles abaixo
+  (ex.: script-src https://www.googletagmanager.com; connect-src https://*.google-analytics.com)
+  e marque o <script> com type="text/plain" data-consent="analytics|marketing" (ver consent.js).
+-->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>NETZ Energia | Batata</title>
+<meta name="description" content="Energia solar por assinatura para produtores de batata. Créditos das usinas NETZ na conta da fazenda, sem investimento, sem obras e sem taxa de adesão.">
+<meta property="og:title" content="NETZ Energia para quem planta batata">
+<meta property="og:description" content="Até 15% de desconto na energia da fazenda. Sem investimento, sem obras, sem taxa de adesão.">
+<meta property="og:image" content="assets/video/colheita-poster.jpg">
+<meta name="theme-color" content="#160f38">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='12' fill='%23F0AC2F'/%3E%3C/svg%3E">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/BricolageGrotesque-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/Manrope-latin.woff2" crossorigin>
+<link rel="preload" as="image" href="assets/video/colheita-poster.jpg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="https://www.netzenergia.com.br/" aria-label="NETZ Energia, site oficial">
+      <svg class="logo" viewBox="0 0 200 36.316" aria-hidden="true"><g transform="translate(-167.309 -58.845)" fill="#fff"><path d="M167.309,58.845h3.839l22.879,29.1v-29.1h3.994V95.16h-3.268L171.3,65.382V95.16h-3.995Z"/><path d="M229.047,58.845H255.3V62.58H233.146v12.4h19.817v3.736H233.146v12.71h22.411V95.16h-26.51Z"/><path d="M294.157,62.632H281.966V58.845H310.5v3.788H298.307V95.161h-4.15Z"/><path d="M349.891,74.163h9.47l7.947-9.248v-6.07H337.685v7h19.351Z" fill="#F0AC2F"/><path d="M354.48,79.842h-9.47l-7.947,9.248V95.16h30.245v-7H347.335Z" fill="#F0AC2F"/></g></svg>
+    </a>
+    <a class="btn btn-sol" href="https://www.netzenergia.com.br/jornada-do-cliente">Quero energia NETZ</a>
+  </div>
+</header>
+
+<main>
+<!-- 1. HERO -->
+<section class="hero" id="topo">
+  <div class="hero-video" aria-hidden="true">
+    <video id="heroVideo" muted loop playsinline preload="none" poster="assets/video/colheita-poster.jpg"
+      data-src-lg="assets/video/colheita-1080.webm" data-src-sm="assets/video/colheita-480.webm"></video>
+  </div>
+  <div class="hero-shade"></div>
+  <button class="video-toggle" id="videoToggle" type="button" aria-label="Pausar vídeo de fundo" aria-pressed="false">
+    <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3v14H7zM14 5h3v14h-3z" fill="currentColor"/></svg>
+    <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+  </button>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow h-in">Para produtores de batata</span>
+      <h1><span class="ln"><span>O sol que faz</span></span><span class="ln"><span>a batata crescer</span></span><span class="ln"><span>agora <em class="ouro">baixa a conta</em></span></span><span class="ln"><span>da sua fazenda.</span></span></h1>
+      <p class="lead h-in">Pivô na lavoura, câmara fria no armazém, lavadora e classificadora no barracão. Toda a energia da sua batata com desconto, vinda das usinas solares da NETZ.</p>
+    <div class="chips h-in">
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>Sem investimento</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>Sem obras</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>Sem taxa de adesão</span>
+    </div>
+    <div class="ctas h-in">
+      <a class="btn btn-sol" href="#simulador">Simular minha economia
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-ghost" href="#como">Ver como funciona</a>
+    </div>
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true">role<span></span></div>
+</section>
+
+<!-- 2. COMO FUNCIONA -->
+<section class="jornada" id="como">
+  <div class="jornada-pin" id="jornadaPin">
+    <div class="j-photo"><img id="jImg" src="assets/img/photo-f74497627-960.jpg" srcset="assets/img/photo-f74497627-500.jpg 500w, assets/img/photo-f74497627-960.jpg 960w" sizes="100vw" width="960" height="640" alt="Usina solar com fileiras de painéis ao entardecer" loading="lazy"></div>
+    <div class="j-shade"></div>
+    <div class="j-glow" id="jGlow"></div>
+    <svg class="arc" id="arc" viewBox="0 0 1000 420" aria-hidden="true">
+      <defs>
+        <linearGradient id="arcg" x1="0" x2="1"><stop offset="0" stop-color="#F0AC2F" stop-opacity=".15"/><stop offset=".5" stop-color="#F0AC2F"/><stop offset="1" stop-color="#F0AC2F" stop-opacity=".15"/></linearGradient>
+        <linearGradient id="hz" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".4"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+      </defs>
+      <rect x="-700" y="400" width="2400" height="1" fill="url(#hz)"/>
+      <path d="M40 400 A460 380 0 0 1 960 400" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="2" stroke-dasharray="4 10"/>
+      <path id="arcFill" d="M40 400 A460 380 0 0 1 960 400" fill="none" stroke="url(#arcg)" stroke-width="3"/>
+    </svg>
+    <div class="sunlet" id="sunlet"></div>
+    <div class="wrap j-head">
+      <span class="eyebrow">Como funciona</span>
+      <h2>Do nascer do sol até a conta da fazenda.</h2>
+    </div>
+    <div class="passos">
+      <div class="passo"><b>01</b><h3>As usinas NETZ geram</h3><p>Nossas usinas solares entregam energia limpa à rede da concessionária.</p></div>
+      <div class="passo"><b>02</b><h3>A energia vira crédito</h3><p>A concessionária lança os créditos na conta da sua propriedade.</p></div>
+      <div class="passo"><b>03</b><h3>A conta da batata cai</h3><p>Pivô, câmara fria e lavadora seguem ligados, só que pagando menos.</p></div>
+      <div class="passo"><b>04</b><h3>Você paga menos</h3><p>Uma fatura NETZ por mês, já com o desconto contratado.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. SIMULADOR -->
+<section class="sim" id="simulador">
+  <div class="wrap">
+    <div class="sim-head">
+      <span class="eyebrow">Simulador</span>
+      <h2>Quanto a sua fazenda pode economizar?</h2>
+      <p>Informe a conta média de energia da propriedade e veja a economia em reais e em sacas de batata.</p>
+    </div>
+    <div class="sim-box" id="simBox">
+      <div class="sim-in">
+        <label for="conta">Conta de energia por mês</label>
+        <div class="valor"><span id="contaTxt">R$ 25.000</span><small>/mês</small></div>
+        <input type="range" id="conta" min="0" max="1000" step="1" value="560">
+        <div class="range-l"><span>R$ 150</span><span>R$ 50 mil</span></div>
+        <div class="perfis" id="perfis" role="group" aria-label="Perfis de propriedade">
+          <button type="button" data-v="1500">Lavoura pequena</button>
+          <button type="button" data-v="8000" class="on">Pivô + galpão</button>
+          <button type="button" data-v="25000">Com câmara fria</button>
+          <button type="button" data-v="50000">Packing house</button>
+        </div>
+        <div class="barras">
+          <p class="barras-t">Sua conta por mês</p>
+          <div class="barra"><span>Hoje</span><div class="b" style="width:100%" id="bHoje">R$ 25.000</div></div>
+          <div class="barra"><span>Com NETZ</span><div class="b netz" id="bNetz" style="width:85%">R$ 21.250</div></div>
+        </div>
+      </div>
+      <div class="sim-out">
+        <img src="assets/img/photo-f24288736-960.jpg" srcset="assets/img/photo-f24288736-500.jpg 500w, assets/img/photo-f24288736-960.jpg 960w" sizes="(max-width:980px) 100vw, 50vw" width="960" height="640" alt="" loading="lazy">
+        <div class="out-l">Economia estimada em 12 meses</div>
+        <div class="big" id="ano" aria-live="polite">R$ 45.000</div>
+        <div class="out-sub">Em 5 anos: <strong id="cinco">R$ 225.000</strong> · <span id="co2">132 t</span> de CO₂ evitados por ano</div>
+        <div class="sacas-out">
+          <h3>Isso paga <em id="sacasTxt">563 sacas</em> de batata por ano.</h3>
+          <div class="pilha-area"><div class="pilha" id="pilha" aria-hidden="true"></div></div>
+          <p class="pilha-l" id="pilhaL">Cada saco em destaque representa 15 sacas de 50 kg.</p>
+        </div>
+        <a class="btn btn-sol" href="https://www.netzenergia.com.br/jornada-do-cliente">Quero economizar
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+    <p class="disclaimer">Simulação ilustrativa com desconto de referência de até 15% sobre a energia compensada. O valor real depende do plano, da concessionária e dos créditos injetados; custo de disponibilidade e encargos (iluminação pública, multas, juros) não têm desconto. Sacas calculadas a R$ 80 por saca de 50 kg.</p>
+  </div>
+</section>
+
+<!-- 4. CTA -->
+<section class="final">
+  <div class="wrap">
+    <span class="eyebrow">É hora de escolher a sua energia</span>
+    <h2>Deixe o sol trabalhar dobrado na sua safra de batata.</h2>
+    <p>Cadastro online em poucos minutos. A NETZ analisa a conta e cuida de tudo com a concessionária.</p>
+    <div class="ctas">
+      <a class="btn btn-sol" href="https://www.netzenergia.com.br/jornada-do-cliente">Quero energia NETZ
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-ghost" href="https://wa.me/553132689333?text=Ol%C3%A1!%20Sou%20produtor%20de%20batata%20e%20quero%20saber%20mais%20sobre%20a%20energia%20NETZ." target="_blank" rel="noopener">Falar no WhatsApp</a>
+    </div>
+  </div>
+  <div class="sun-final" id="sunFinal"><div class="core"></div></div>
+  <div class="horizon"></div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <svg class="logo" viewBox="0 0 200 36.316" role="img" aria-label="NETZ Energia"><g transform="translate(-167.309 -58.845)" fill="#fff"><path d="M167.309,58.845h3.839l22.879,29.1v-29.1h3.994V95.16h-3.268L171.3,65.382V95.16h-3.995Z"/><path d="M229.047,58.845H255.3V62.58H233.146v12.4h19.817v3.736H233.146v12.71h22.411V95.16h-26.51Z"/><path d="M294.157,62.632H281.966V58.845H310.5v3.788H298.307V95.161h-4.15Z"/><path d="M349.891,74.163h9.47l7.947-9.248v-6.07H337.685v7h19.351Z" fill="#F0AC2F"/><path d="M354.48,79.842h-9.47l-7.947,9.248V95.16h30.245v-7H347.335Z" fill="#F0AC2F"/></g></svg>
+    <div class="links">
+      <a href="tel:+553132689333">+55 31 3268-9333</a>
+      <a href="https://www.instagram.com/netz_energia/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.linkedin.com/company/82160958/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.netzenergia.com.br/faq">Dúvidas frequentes</a>
+    </div>
+    <span>Segunda a sexta, das 10h às 17h</span>
+    <nav class="legal-links" aria-label="Privacidade e termos">
+      <a href="https://www.netzenergia.com.br/politica-de-privacidade" target="_blank" rel="noopener">Política de Privacidade</a>
+      <a href="https://www.netzenergia.com.br/termos-de-utilizacao" target="_blank" rel="noopener">Termos de Uso</a>
+      <button type="button" class="link-btn" data-cookie-open>Preferências de cookies</button>
+    </nav>
+    <p class="legal">Geração Distribuída regulamentada pela ANEEL, conforme Lei 14.300/22. NETZ Energia® é marca registrada da NETZ ENERGIA LTDA.<br>
+      Fotos via Wikimedia Commons: <a href="https://commons.wikimedia.org/wiki/File:A_photovoltaic_power_station_in_the_United_States_(36130544874).jpg" target="_blank" rel="noopener">Chris Allan, U.S. DOE</a> (domínio público), <a href="https://commons.wikimedia.org/wiki/File:Potatoes-5785_-_Hans_Braxmeier.jpg" target="_blank" rel="noopener">Hans Braxmeier</a> (CC0). Vídeo: <a href="https://commons.wikimedia.org/wiki/File:Harvest_(20181008-FPAC-KLS-0005).webm" target="_blank" rel="noopener">USDA</a> (domínio público).</p>
+  </div>
+</footer>
+
+<a class="zap" href="https://wa.me/553132689333?text=Ol%C3%A1!%20Sou%20produtor%20de%20batata%20e%20quero%20saber%20mais%20sobre%20a%20energia%20NETZ." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4C2.7 15.6 2.2 13.8 2.2 12 2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 6.9 2.9 1.9 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8M20.5 3.5C18.2 1.2 15.2 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.8 1.5 5.8 1.5 6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.4"/></svg>
+</a>
+
+<!-- AVISO DE COOKIES (LGPD) -->
+<section class="cookie" id="cookieBanner" aria-label="Aviso de cookies" hidden>
+  <div class="cookie-in">
+    <p><strong>Sua privacidade importa.</strong> Usamos cookies necessários para a página funcionar e, só com a sua permissão, cookies de análise e de marketing para medir as visitas e melhorar nossas campanhas. Veja a <a href="https://www.netzenergia.com.br/politica-de-privacidade" target="_blank" rel="noopener">Política de Privacidade</a>.</p>
+    <div class="cookie-actions">
+      <button type="button" class="ck-btn ck-line" data-cookie-open>Personalizar</button>
+      <button type="button" class="ck-btn ck-line" data-cookie="reject">Recusar</button>
+      <button type="button" class="ck-btn ck-sol" data-cookie="accept">Aceitar</button>
+    </div>
+  </div>
+</section>
+
+<dialog class="ck-dialog" id="cookieDialog" aria-labelledby="ckTitle">
+  <form method="dialog">
+    <h2 id="ckTitle">Preferências de cookies</h2>
+    <p class="ck-intro">Escolha quais cookies esta página pode usar. Você pode mudar isso quando quiser em “Preferências de cookies”, no rodapé.</p>
+    <div class="ck-row">
+      <div><h3>Necessários</h3><p>Guardam a sua escolha sobre cookies. Não podem ser desligados.</p></div>
+      <span class="ck-always">Sempre ativos</span>
+    </div>
+    <label class="ck-row">
+      <div><h3>Análise</h3><p>Contam visitas e mostram como a página é usada, de forma agregada (ex.: Google Analytics).</p></div>
+      <input type="checkbox" class="ck-switch" name="analytics">
+    </label>
+    <label class="ck-row">
+      <div><h3>Marketing</h3><p>Medem o resultado dos anúncios e permitem mostrar ofertas da NETZ em outros sites (ex.: Meta, Google Ads).</p></div>
+      <input type="checkbox" class="ck-switch" name="marketing">
+    </label>
+    <p class="ck-intro">Detalhes na <a href="https://www.netzenergia.com.br/politica-de-privacidade" target="_blank" rel="noopener">Política de Privacidade da NETZ</a>.</p>
+    <div class="cookie-actions">
+      <button type="button" class="ck-btn ck-line" data-cookie="reject">Recusar todos</button>
+      <button type="button" class="ck-btn ck-line" data-cookie="save">Salvar escolhas</button>
+      <button type="button" class="ck-btn ck-sol" data-cookie="accept">Aceitar todos</button>
+    </div>
+  </form>
+</dialog>
+
+<!--
+  FERRAMENTAS DE ANÁLISE/MARKETING: cole aqui com type="text/plain" e data-consent.
+  Elas só rodam depois que o visitante aceitar a categoria. Exemplo (Google Analytics 4):
+  <script type="text/plain" data-consent="analytics" data-src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script type="text/plain" data-consent="analytics" data-src="assets/js/ga-config.js"></script>
+-->
+
+<script src="assets/js/consent.js"></script>
+<script src="assets/js/gsap.min.js"></script>
+<script src="assets/js/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
