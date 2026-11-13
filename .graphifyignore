@@ -1,0 +1,12 @@
+*.mp4
+*.woff2
+*.jpg
+*.png
+**/js/vendor/
+**/js/laranja3d.js
+.playwright-mcp/
+.impeccable/
+.claude/
+graphify-out/
+*.svg
+robots.txt

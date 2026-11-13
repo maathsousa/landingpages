@@ -1,0 +1,122 @@
+{
+  "netz-cafe/js/boot.js": {
+    "mtime": 1794481404.8942864,
+    "seen": 1794572606.4997437,
+    "ast_hash": "e940d1505cd8f09a6fd8ebcd94991838",
+    "semantic_hash": "e940d1505cd8f09a6fd8ebcd94991838"
+  },
+  "netz-cafe/js/consent.js": {
+    "mtime": 1794481406.5810153,
+    "seen": 1794572606.4998071,
+    "ast_hash": "22342885bac22288604d05e9f83c9e19",
+    "semantic_hash": "22342885bac22288604d05e9f83c9e19"
+  },
+  "netz-cafe/js/main.js": {
+    "mtime": 1794420410.7008727,
+    "seen": 1794572606.4998345,
+    "ast_hash": "06eea6265beebae4a9c01284c52f46c7",
+    "semantic_hash": "06eea6265beebae4a9c01284c52f46c7"
+  },
+  "netz-cafe/vercel.json": {
+    "mtime": 1794481551.0537155,
+    "seen": 1794572606.4998505,
+    "ast_hash": "22939238a7ec0424f45f0171357538ed",
+    "semantic_hash": "22939238a7ec0424f45f0171357538ed"
+  },
+  "netz-laranja/js/boot.js": {
+    "mtime": 1794483434.4601023,
+    "seen": 1794572606.4998634,
+    "ast_hash": "e940d1505cd8f09a6fd8ebcd94991838",
+    "semantic_hash": "e940d1505cd8f09a6fd8ebcd94991838"
+  },
+  "netz-laranja/js/consent.js": {
+    "mtime": 1794483434.4601023,
+    "seen": 1794572606.4998755,
+    "ast_hash": "22342885bac22288604d05e9f83c9e19",
+    "semantic_hash": "22342885bac22288604d05e9f83c9e19"
+  },
+  "netz-laranja/js/main.js": {
+    "mtime": 1794501290.3545759,
+    "seen": 1794572606.4998884,
+    "ast_hash": "db97adaa60249d12c5afffead77808cb",
+    "semantic_hash": "db97adaa60249d12c5afffead77808cb"
+  },
+  "netz-laranja/vercel.json": {
+    "mtime": 1794483434.4785533,
+    "seen": 1794572606.499899,
+    "ast_hash": "22939238a7ec0424f45f0171357538ed",
+    "semantic_hash": "22939238a7ec0424f45f0171357538ed"
+  },
+  "PRODUCT.md": {
+    "mtime": 1794483465.411347,
+    "seen": 1794572606.4999099,
+    "ast_hash": "7e97e21f8d2b0d14d2384de564f1da37",
+    "semantic_hash": "7e97e21f8d2b0d14d2384de564f1da37"
+  },
+  "index.html": {
+    "mtime": 1794508963.6717021,
+    "seen": 1794572606.499922,
+    "ast_hash": "8f13e025f370405113d1ee5d4f90654d",
+    "semantic_hash": "8f13e025f370405113d1ee5d4f90654d"
+  },
+  "memoria/README.md": {
+    "mtime": 1794572316.9152615,
+    "seen": 1794572606.499934,
+    "ast_hash": "c6537aa28ee08cc9634b9d1bfcd8d548",
+    "semantic_hash": "c6537aa28ee08cc9634b9d1bfcd8d548"
+  },
+  "memoria/feedback-skill-landing-pages.md": {
+    "mtime": 1794572314.414601,
+    "seen": 1794572606.5002108,
+    "ast_hash": "082792c31d3cbc6212256a161ce6a662",
+    "semantic_hash": "082792c31d3cbc6212256a161ce6a662"
+  },
+  "memoria/project-netz-cafe.md": {
+    "mtime": 1794572315.021914,
+    "seen": 1794572606.5002394,
+    "ast_hash": "f10679e57a4d0452eab0815177b415eb",
+    "semantic_hash": "f10679e57a4d0452eab0815177b415eb"
+  },
+  "memoria/project-netz-laranja.md": {
+    "mtime": 1794572315.5790105,
+    "seen": 1794572606.5002542,
+    "ast_hash": "b16232d424f58b4d8534dbe65f301067",
+    "semantic_hash": "b16232d424f58b4d8534dbe65f301067"
+  },
+  "memoria/project-repo-hub.md": {
+    "mtime": 1794572316.1434245,
+    "seen": 1794572606.5002685,
+    "ast_hash": "ba62eb631043aa0d7532d5b5eea9d25f",
+    "semantic_hash": "ba62eb631043aa0d7532d5b5eea9d25f"
+  },
+  "memoria/project-skill-nova-lp.md": {
+    "mtime": 1794572316.6762433,
+    "seen": 1794572606.5002813,
+    "ast_hash": "9979d7235e7b217f376ef0aec6eb6e0a",
+    "semantic_hash": "9979d7235e7b217f376ef0aec6eb6e0a"
+  },
+  "netz-cafe/index.html": {
+    "mtime": 1794481436.8419523,
+    "seen": 1794572606.500293,
+    "ast_hash": "227f68688813f1ed4da94f1bd4126890",
+    "semantic_hash": "227f68688813f1ed4da94f1bd4126890"
+  },
+  "netz-cafe/politica-de-privacidade.html": {
+    "mtime": 1794481726.8874893,
+    "seen": 1794572606.5003011,
+    "ast_hash": "58264af1d03478865c6e7746b8347712",
+    "semantic_hash": "58264af1d03478865c6e7746b8347712"
+  },
+  "netz-laranja/index.html": {
+    "mtime": 1794501263.898379,
+    "seen": 1794572606.500308,
+    "ast_hash": "404d5ff120ba9b0c52cd48d9e27ac683",
+    "semantic_hash": "404d5ff120ba9b0c52cd48d9e27ac683"
+  },
+  "netz-laranja/politica-de-privacidade.html": {
+    "mtime": 1794483855.0790977,
+    "seen": 1794572606.5003157,
+    "ast_hash": "6735bb286cd049f089d9c499a620ccfa",
+    "semantic_hash": "6735bb286cd049f089d9c499a620ccfa"
+  }
+}

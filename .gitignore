@@ -1,6 +1,8 @@
 # artefatos locais de teste e ferramentas
 .playwright-mcp/
-**/graphify-out/
+graphify-out/cache/
+graphify-out/.graphify_*
+graphify-out/graph.original.html
 .impeccable/review/
 **/hook.cache.json
 *.png

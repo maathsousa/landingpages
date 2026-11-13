@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mapa do projeto · Landing pages NETZ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/vis-network@9.1.6/standalone/umd/vis-network.min.js"
+        integrity="sha384-Ux6phic9PEHJ38YtrijhkzyJ8yQlH8i/+buBR8s3mAZOJrP1gwyvAcIYl3GWtpX1"
+        crossorigin="anonymous"></script>
+<link rel="stylesheet" href="graph.css">
+<script src="graph-dados.js"></script>
+<script src="graph.js"></script>
+</head>
+<body>
+<div id="graph" aria-label="Grafo interativo do projeto"></div>
+<div id="loading"><div><div class="spinner"></div>Organizando o mapa…</div></div>
+
+<header id="topbar" class="panel">
+  <div class="brand">
+    <div class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="6" cy="7" r="2.2"/><circle cx="18" cy="6" r="2.2"/><circle cx="12" cy="17" r="2.6"/><path d="M8 8l2.6 7M16.4 7.8 13.6 15M8.2 7h7.6"/></svg></div>
+    <div style="min-width:0">
+      <h1>Mapa do projeto</h1>
+      <p>Landing pages NETZ · gerado pelo graphify</p>
+    </div>
+  </div>
+  <div class="stats" id="stats"></div>
+  <div class="seg" role="group" aria-label="Tema">
+    <button type="button" data-theme-choice="light">Claro</button>
+    <button type="button" data-theme-choice="dark">Escuro</button>
+    <button type="button" data-theme-choice="system">Sistema</button>
+  </div>
+</header>
+
+<aside id="left" class="panel" aria-label="Busca e comunidades">
+  <div class="search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input id="search" type="search" placeholder="Buscar nós…" autocomplete="off" aria-label="Buscar nós" aria-controls="search-results">
+    <span class="kbd" aria-hidden="true">/</span>
+    <div id="search-results" role="listbox"></div>
+  </div>
+  <div class="section-head">
+    <span class="eyebrow">Comunidades</span>
+    <div><button class="link-btn" type="button" id="all-on">Todas</button><button class="link-btn" type="button" id="all-off">Nenhuma</button></div>
+  </div>
+  <div id="legend"></div>
+  <div class="key" aria-label="Legenda das ligações">
+    <div class="key-row"><i></i>Ligação lida no código ou texto</div>
+    <div class="key-row"><i class="dash"></i>Ligação inferida</div>
+    <div class="key-row"><i class="hull"></i>Grupo de nós (fluxo em comum)</div>
+  </div>
+</aside>
+
+<aside id="right" class="panel is-empty" aria-label="Detalhes do nó" aria-live="polite">
+  <div id="detail"></div>
+</aside>
+
+<div id="zoom" class="panel" role="group" aria-label="Zoom">
+  <button type="button" id="z-in" aria-label="Aproximar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+  <button type="button" id="z-out" aria-label="Afastar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/></svg></button>
+  <button type="button" id="z-fit" aria-label="Enquadrar tudo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V5h4M20 9V5h-4M4 15v4h4M20 15v4h-4"/></svg></button>
+</div>
+
+</body>
+</html>
