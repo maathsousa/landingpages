@@ -89,7 +89,6 @@ html { scrollbar-color: var(--roxo-600) var(--polpa-2); }
 .topo.is-solido .topo__inner { height: 66px; }
 .topo__logo { display: flex; align-items: center; gap: 12px; color: var(--branco); text-decoration: none; }
 .topo__logo svg { width: 116px; height: auto; }
-.topo__tag { font-family: var(--f-titulo); font-weight: 700; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--laranja-claro); padding-left: 12px; border-left: 1px solid rgba(255, 255, 255, .3); line-height: 1.2; }
 .topo__nav { display: flex; gap: 28px; margin-left: auto; }
 .topo__nav a { font-family: var(--f-titulo); font-weight: 600; font-size: .9rem; text-decoration: none; color: rgba(255, 255, 255, .9); transition: color .2s var(--ease); }
 .topo__nav a:hover { color: var(--laranja-claro); }
@@ -97,10 +96,8 @@ html { scrollbar-color: var(--roxo-600) var(--polpa-2); }
 @media (max-width: 420px) {
   .topo__inner { gap: 10px; }
   .topo__logo svg { width: 88px; }
-  .topo__tag { padding-left: 8px; font-size: .7rem; letter-spacing: .1em; }
   .topo .btn--sm { padding: 0 14px; font-size: .82rem; }
 }
-@media (max-width: 380px) { .topo__tag { display: none; } }
 
 /* ---------- Hero ---------- */
 .hero {
