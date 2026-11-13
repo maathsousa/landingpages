@@ -11,6 +11,7 @@ h1 { font: 800 clamp(2rem, 5vw, 3.6rem)/1.05 Montserrat, sans-serif; margin: 0 0
 a.card:hover, a.card:focus-visible { transform: translateY(-6px); box-shadow: 0 24px 50px -20px rgba(0,0,0,.6); border-color: var(--acento); outline: none; }
 .card--cafe { --acento: #C98B4E; }
 .card--laranja { --acento: #F28C1E; }
+.card--batata { --acento: #EBC48A; }
 .card__tela { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: #1B1245; }
 .card__tela::before { content: ""; position: absolute; inset: 0 0 auto; height: 26px; z-index: 1; background: rgba(20,13,56,.85) radial-gradient(circle at 16px 13px, #FF6159 4px, transparent 5px), radial-gradient(circle at 32px 13px, #FFBD2E 4px, transparent 5px); background-blend-mode: normal; }
 .card__tela::after { content: ""; position: absolute; left: 0; top: 0; width: 0; height: 26px; }
