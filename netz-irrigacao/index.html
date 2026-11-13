@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Energia mais barata para irrigação e pivô central, sem obra | NETZ Energia</title>
+  <meta name="description" content="Reduza a conta de luz da irrigação com energia solar por assinatura da NETZ. Pivô central, motobomba e captação com desconto, sem obra, sem investimento e sem taxa de adesão.">
+  <meta name="theme-color" content="#35247C">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="NETZ Energia">
+  <meta property="og:title" content="Energia mais barata para o seu pivô | NETZ Energia">
+  <meta property="og:description" content="Energia solar por assinatura para quem irriga. Sem obra, sem investimento e sem taxa de adesão.">
+  <meta property="og:image" content="img/pivo-poster.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" as="font" type="font/woff2" href="fonts/montserrat-latin.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="fonts/opensans-latin.woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="preload" as="image" href="img/pivo-poster.jpg" fetchpriority="high">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/boot.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "NETZ Energia",
+        "legalName": "NETZ ENERGIA LTDA",
+        "url": "https://www.netzenergia.com.br/",
+        "logo": "https://www.netzenergia.com.br/site/imagens/logoTopo.svg",
+        "telephone": "+55-31-3268-9333",
+        "sameAs": ["https://www.instagram.com/netz_energia/", "https://www.linkedin.com/company/82160958/"]
+      },
+      {
+        "@type": "Service",
+        "name": "Energia solar por assinatura para irrigação",
+        "serviceType": "Geração distribuída compartilhada",
+        "provider": { "@type": "Organization", "name": "NETZ Energia" },
+        "areaServed": { "@type": "Country", "name": "Brasil" },
+        "audience": { "@type": "Audience", "audienceType": "Produtores irrigantes" },
+        "description": "Desconto na conta de energia da irrigação (pivô central, motobomba e captação) com energia solar por assinatura, sem obra, sem investimento e sem taxa de adesão."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Já tenho desconto de irrigante. Vale a pena?", "acceptedAnswer": { "@type": "Answer", "text": "Vale. O desconto de irrigante no horário reservado continua com você, porque ele é da distribuidora. A NETZ entra com créditos de energia solar que baixam o restante da conta. A análise da sua unidade mostra quanto você economiza." } },
+          { "@type": "Question", "name": "Preciso instalar placas solares na fazenda?", "acceptedAnswer": { "@type": "Answer", "text": "Não. A energia é gerada nas usinas solares da NETZ e injetada na rede da distribuidora. Os créditos são descontados direto na conta de luz da sua propriedade, sem obra e sem equipamento na lavoura." } },
+          { "@type": "Question", "name": "Tenho que pagar alguma coisa para entrar?", "acceptedAnswer": { "@type": "Answer", "text": "Não. A NETZ não cobra taxa de adesão e não exige investimento inicial." } },
+          { "@type": "Question", "name": "O pivô pode ficar sem energia?", "acceptedAnswer": { "@type": "Answer", "text": "Não por causa da NETZ. A energia continua chegando pela mesma rede da distribuidora, do mesmo jeito que hoje. O que muda é o valor da conta." } },
+          { "@type": "Question", "name": "Existe fidelidade?", "acceptedAnswer": { "@type": "Answer", "text": "Você decide se o seu plano é com ou sem fidelidade. Nos planos sem fidelidade, o cancelamento leva no máximo 90 dias para a desconexão." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <svg class="sprite" width="0" height="0" aria-hidden="true">
+    <defs>
+      <!-- mini pivô visto de cima (simulador) -->
+      <symbol id="mini-pivo" viewBox="0 0 40 40">
+        <circle cx="20" cy="20" r="18" class="mini-pivo__campo"/>
+        <path class="mini-pivo__braco" d="M20 20 L20 3"/>
+        <circle cx="20" cy="20" r="2.6" class="mini-pivo__centro"/>
+      </symbol>
+      <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+      <symbol id="i-fechar" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+      <symbol id="i-whats" viewBox="0 0 24 24"><path d="M12 3.5a8.5 8.5 0 0 0-7.4 12.7L3.5 20.5l4.4-1.1A8.5 8.5 0 1 0 12 3.5Z"/><path d="M9 8.5c.3-.5.8-.5 1.1 0l.8 1.6c.1.3 0 .6-.2.9l-.5.6c.6 1.3 1.6 2.3 2.9 2.9l.6-.5c.3-.2.6-.3.9-.2l1.6.8c.5.3.5.8 0 1.1-.7.6-1.6.9-2.5.6-2.6-.9-4.6-2.9-5.5-5.5-.3-.9 0-1.8.6-2.5Z"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topo" data-topo>
+    <div class="topo__inner wrap">
+      <a class="topo__logo" href="#inicio" aria-label="NETZ Energia, início">
+        <svg viewBox="0 0 200 36.316" aria-hidden="true"><g transform="translate(-167.013 -58.845)" fill="currentColor"><path d="M167.309,58.845h3.839l22.879,29.1v-29.1h3.994V95.16h-3.268L171.3,65.382V95.16h-3.995Z" transform="translate(-0.296)"/><path d="M229.047,58.845H255.3V62.58H233.146v12.4h19.817v3.736H233.146v12.71h22.411V95.16h-26.51Z" transform="translate(-0.296)"/><path d="M294.157,62.632H281.966V58.845H310.5v3.788H298.307V95.161h-4.15Z" transform="translate(-0.296)"/><path d="M349.891,74.163h9.47l7.947-9.248v-6.07H337.685v7h19.351Z" transform="translate(-0.296)" fill="#F0AC2F"/><path d="M354.48,79.842h-9.47l-7.947,9.248V95.16h30.245v-7H347.335Z" transform="translate(-0.296)" fill="#F0AC2F"/></g></svg>
+      </a>
+      <nav class="topo__nav" aria-label="Seções">
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#simulador">Simulador</a>
+        <a href="#duvidas">Dúvidas</a>
+      </nav>
+      <a class="btn btn--sm" data-cta href="https://www.netzenergia.com.br/jornada-do-cliente">Quero energia NETZ</a>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- HERO -->
+    <section class="hero" id="inicio" aria-labelledby="hero-titulo">
+      <div class="hero__media" aria-hidden="true">
+        <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="img/pivo-poster.jpg" data-hero-video>
+          <source src="img/pivo-480.mp4" type="video/mp4" media="(max-width: 760px)">
+          <source src="img/pivo-720.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="hero__inner wrap">
+        <h1 class="hero__titulo" id="hero-titulo" data-hero>Energia mais barata para o seu pivô.</h1>
+        <p class="hero__texto" data-hero>Pivô, motobomba e captação ligados horas por dia, safra após safra. Com a energia das usinas solares da NETZ, a conta da irrigação fica mais leve. <strong>Sem obra, sem investimento e sem taxa de adesão.</strong></p>
+        <div class="hero__acoes" data-hero>
+          <a class="btn" data-cta href="https://www.netzenergia.com.br/jornada-do-cliente">Quero energia NETZ <svg class="ico" aria-hidden="true"><use href="#i-seta"/></svg></a>
+          <a class="link-claro" href="#simulador">Simular minha economia</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA: o pivô gira com a rolagem e pinta o círculo -->
+    <section class="como" id="como-funciona" aria-labelledby="como-titulo" data-como>
+      <div class="como__stage wrap" data-como-stage>
+        <div class="como__texto">
+          <h2 class="titulo titulo--claro" id="como-titulo">A água chega no pivô. O desconto chega na conta.</h2>
+          <p class="como__dado">Minas Gerais tem a maior área irrigada por pivôs do Brasil: 637 mil hectares, a maior parte no Cerrado.<sup><a href="#fontes" aria-label="Ver fonte">1</a></sup></p>
+          <ol class="etapas">
+            <li class="etapa" data-etapa="0">
+              <h3>Cadastre a propriedade</h3>
+              <p>Nome, celular, e-mail e o CEP da fazenda. A NETZ confere se a sua região é atendida.</p>
+            </li>
+            <li class="etapa" data-etapa="1">
+              <h3>A usina gera, a rede leva</h3>
+              <p>As nossas usinas solares injetam energia na rede da distribuidora, e a NETZ conversa com ela por você.</p>
+            </li>
+            <li class="etapa" data-etapa="2">
+              <h3>O pivô gira como sempre</h3>
+              <p>Nada muda na lavoura: mesma bomba, mesma lâmina, mesmo horário de irrigação.</p>
+            </li>
+            <li class="etapa" data-etapa="3">
+              <h3>A conta chega mais leve</h3>
+              <p>Os créditos de energia solar descontam a sua conta todo mês, inclusive nos meses de irrigação pesada.</p>
+            </li>
+          </ol>
+        </div>
+
+        <div class="como__visual" aria-hidden="true">
+          <div class="pivo-tela" data-pivo-tela>
+            <svg class="pivo" viewBox="0 0 440 440" data-pivo>
+              <defs>
+                <filter id="f-solo" x="0" y="0" width="100%" height="100%">
+                  <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="4" result="r"/>
+                  <feColorMatrix in="r" type="matrix" values="0 0 0 0 .35  0 0 0 0 .12  0 0 0 0 .04  0 0 0 .55 0"/>
+                  <feComposite in2="SourceGraphic" operator="in"/>
+                </filter>
+                <radialGradient id="g-verde" cx="50%" cy="50%" r="50%">
+                  <stop offset="0" stop-color="#7DBB45"/><stop offset=".7" stop-color="#4F9433"/><stop offset="1" stop-color="#3B7A2A"/>
+                </radialGradient>
+                <linearGradient id="g-jato" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#7FE3F0" stop-opacity="0"/><stop offset="1" stop-color="#7FE3F0" stop-opacity=".75"/>
+                </linearGradient>
+                <clipPath id="c-setor"><path d="M220 220m-190 0a190 190 0 1 0 380 0a190 190 0 1 0 -380 0" data-setor/></clipPath>
+              </defs>
+              <!-- terra vermelha do Cerrado -->
+              <rect width="440" height="440" rx="28" class="pivo__terra"/>
+              <rect width="440" height="440" rx="28" class="pivo__terra" filter="url(#f-solo)"/>
+              <!-- círculo seco (ainda sem água) -->
+              <circle cx="220" cy="220" r="190" class="pivo__seco"/>
+              <g class="pivo__linhas pivo__linhas--seco">
+                <circle cx="220" cy="220" r="170"/><circle cx="220" cy="220" r="150"/><circle cx="220" cy="220" r="130"/><circle cx="220" cy="220" r="110"/><circle cx="220" cy="220" r="90"/><circle cx="220" cy="220" r="70"/><circle cx="220" cy="220" r="50"/>
+              </g>
+              <!-- área já irrigada: cresce com a rolagem -->
+              <g clip-path="url(#c-setor)">
+                <circle cx="220" cy="220" r="190" fill="url(#g-verde)"/>
+                <g class="pivo__linhas">
+                  <circle cx="220" cy="220" r="180"/><circle cx="220" cy="220" r="160"/><circle cx="220" cy="220" r="140"/><circle cx="220" cy="220" r="120"/><circle cx="220" cy="220" r="100"/><circle cx="220" cy="220" r="80"/><circle cx="220" cy="220" r="60"/><circle cx="220" cy="220" r="40"/>
+                </g>
+              </g>
+              <!-- usina solar e linha de energia até o centro do pivô -->
+              <g class="usina" transform="translate(360 22)">
+                <rect x="0" y="0" width="58" height="40" rx="4" class="usina__base"/>
+                <path d="M4 4h14v14H4zM22 4h14v14H22zM40 4h14v14H40zM4 22h14v14H4zM22 22h14v14H22zM40 22h14v14H40z" class="usina__placas"/>
+              </g>
+              <path d="M389 64 C380 130 300 150 226 214" class="energia__trilho"/>
+              <path d="M389 64 C380 130 300 150 226 214" class="energia__fluxo" data-fluxo/>
+              <!-- braço do pivô: gira em torno do centro -->
+              <g class="braco" data-braco>
+                <rect x="220" y="216" width="190" height="8" rx="4" fill="url(#g-jato)" class="braco__jato"/>
+                <line x1="220" y1="220" x2="412" y2="220" class="braco__tubo"/>
+                <circle cx="284" cy="220" r="6" class="braco__torre"/>
+                <circle cx="348" cy="220" r="6" class="braco__torre"/>
+                <circle cx="410" cy="220" r="7" class="braco__torre braco__torre--fim"/>
+              </g>
+              <circle cx="220" cy="220" r="13" class="pivo__centro"/>
+              <circle cx="220" cy="220" r="5" class="pivo__centro-luz" data-centro/>
+            </svg>
+          </div>
+          <div class="pivo__trilha" data-trilha>
+            <span>Usina gera</span><span>Rede leva</span><span>Pivô gira</span><span>Conta cai</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIMULADOR -->
+    <section class="simulador" id="simulador" aria-labelledby="sim-titulo">
+      <div class="wrap sim">
+        <div class="sim__entrada">
+          <h2 class="titulo" id="sim-titulo" data-reveal>Quanto a sua irrigação pode economizar?</h2>
+          <p class="lead" data-reveal>Coloque a conta de luz da propriedade e a área irrigada. A gente mostra a economia no ano e por hectare.</p>
+
+          <div class="sim__atalhos" role="group" aria-label="Exemplos prontos" data-reveal>
+            <button type="button" class="atalho is-on" data-atalho="20000,65">1 pivô</button>
+            <button type="button" class="atalho" data-atalho="60000,195">3 pivôs</button>
+            <button type="button" class="atalho" data-atalho="200000,650">10 pivôs</button>
+          </div>
+
+          <div class="sim__campo" data-reveal>
+            <label for="sim-valor">Conta de luz por mês</label>
+            <div class="sim__input">
+              <span aria-hidden="true">R$</span>
+              <input id="sim-valor" type="text" inputmode="numeric" autocomplete="off" value="20.000,00" data-sim-valor>
+            </div>
+            <input class="sim__range" type="range" min="1000" max="200000" step="500" value="20000" aria-label="Ajustar conta de luz por mês" data-sim-range>
+            <div class="sim__limites" aria-hidden="true"><span>R$ 1 mil</span><span>R$ 200 mil</span></div>
+            <p class="sim__ajuda" data-sim-ajuda>Média do ano, somando os meses de irrigação.</p>
+          </div>
+
+          <div class="sim__campo sim__campo--mini" data-reveal>
+            <label for="sim-area">Área irrigada</label>
+            <div class="sim__input sim__input--mini">
+              <input id="sim-area" type="text" inputmode="numeric" autocomplete="off" value="65" aria-describedby="sim-area-ref" data-sim-area>
+              <span aria-hidden="true">hectares</span>
+            </div>
+            <p class="sim__ref" id="sim-area-ref">Um pivô central no Brasil irriga, em média, 65 hectares.<sup><a href="#fontes" aria-label="Ver fonte">1</a></sup></p>
+          </div>
+        </div>
+
+        <div class="sim__resultado" data-reveal aria-live="polite">
+          <p class="sim__rotulo">Em 1 ano, a sua irrigação economiza até</p>
+          <p class="sim__valor"><span class="sim__rs">R$</span> <span data-sim-economia>36.000,00</span></p>
+
+          <div class="fatia">
+            <svg class="fatia__pivo" viewBox="0 0 220 220" aria-hidden="true">
+              <circle cx="110" cy="110" r="100" class="fatia__fundo"/>
+              <g class="fatia__linhas"><circle cx="110" cy="110" r="80"/><circle cx="110" cy="110" r="60"/><circle cx="110" cy="110" r="40"/></g>
+              <path class="fatia__setor" d="M110 110 L110 10 A100 100 0 0 1 189.1 48.8 Z" data-fatia/>
+              <g class="fatia__braco" data-fatia-braco><line x1="110" y1="110" x2="110" y2="8"/><circle cx="110" cy="8" r="4.5"/></g>
+              <circle cx="110" cy="110" r="7" class="fatia__centro"/>
+            </svg>
+            <div class="fatia__txt">
+              <p class="fatia__titulo">Esta fatia do seu pivô gira <strong>por nossa conta.</strong></p>
+              <p class="fatia__sub">Até <strong>R$ <span data-sim-ha>553,85</span></strong> a menos por hectare irrigado, todo ano.</p>
+            </div>
+          </div>
+
+          <div class="pivos">
+            <p class="pivos__titulo" data-sim-pivos-txt>Cerca de 1 pivô de 65 ha</p>
+            <div class="pivos__lista" data-sim-pivos aria-hidden="true"></div>
+          </div>
+
+          <div class="porha">
+            <p class="porha__titulo">Energia por hectare no ano</p>
+            <div class="porha__linha">
+              <span class="porha__nome">Hoje</span>
+              <span class="porha__barra"><i></i></span>
+              <span class="porha__valor">R$ <span data-sim-hoje>3.692,31</span></span>
+            </div>
+            <div class="porha__linha porha__linha--netz">
+              <span class="porha__nome">Com NETZ</span>
+              <span class="porha__barra"><i></i></span>
+              <span class="porha__valor">R$ <span data-sim-netz>3.138,46</span></span>
+            </div>
+          </div>
+
+          <a class="btn" data-cta href="https://www.netzenergia.com.br/jornada-do-cliente">Quero essa economia <svg class="ico" aria-hidden="true"><use href="#i-seta"/></svg></a>
+          <p class="sim__nota">Simulação com desconto de até 15% sobre a conta de energia. O valor final depende da análise da sua unidade (consumo mínimo de 75 kWh líquidos por mês).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="duvidas" aria-labelledby="faq-titulo">
+      <div class="wrap faq__grid">
+        <div class="faq__topo">
+          <h2 class="titulo" id="faq-titulo" data-reveal>Dúvidas de quem irriga</h2>
+          <a class="link-escuro" href="https://wa.me/553132689333?text=Ol%C3%A1!%20Sou%20irrigante%20e%20quero%20saber%20mais%20sobre%20a%20energia%20NETZ." target="_blank" rel="noopener noreferrer" data-reveal><svg class="ico" aria-hidden="true"><use href="#i-whats"/></svg>Outra dúvida? (31) 3268-9333</a>
+        </div>
+        <div class="faq__lista">
+          <details>
+            <summary>Já tenho desconto de irrigante. Vale a pena?</summary>
+            <p>Vale. O desconto de irrigante no horário reservado continua com você, porque ele é da distribuidora. A NETZ entra com créditos de energia solar que baixam o restante da conta. A análise da sua unidade mostra quanto você economiza.</p>
+          </details>
+          <details>
+            <summary>Preciso instalar placas solares na fazenda?</summary>
+            <p>Não. A energia é gerada nas usinas solares da NETZ e injetada na rede da distribuidora. Os créditos são descontados direto na conta de luz da sua propriedade, sem obra e sem equipamento na lavoura.</p>
+          </details>
+          <details>
+            <summary>Tenho que pagar alguma coisa para entrar?</summary>
+            <p>Não. A NETZ não cobra taxa de adesão e não exige investimento inicial.</p>
+          </details>
+          <details>
+            <summary>O pivô pode ficar sem energia?</summary>
+            <p>Não por causa da NETZ. A energia continua chegando pela mesma rede da distribuidora, do mesmo jeito que hoje. O que muda é o valor da conta.</p>
+          </details>
+          <details>
+            <summary>Existe fidelidade?</summary>
+            <p>Você decide se o seu plano é com ou sem fidelidade. Nos planos sem fidelidade, o cancelamento leva no máximo 90 dias para a desconexão.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL: anoitece e o pivô continua girando, com as luzes acesas -->
+    <section class="noite" aria-labelledby="final-titulo" data-noite-sec>
+      <svg class="cena" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="n-tarde" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#3A2C8C"/><stop offset=".5" stop-color="#9B4A7A"/><stop offset=".8" stop-color="#E07A4A"/><stop offset="1" stop-color="#F2B36A"/>
+          </linearGradient>
+          <linearGradient id="n-noite" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#0B0828"/><stop offset=".7" stop-color="#1E1550"/><stop offset="1" stop-color="#35247C"/>
+          </linearGradient>
+          <radialGradient id="n-luz"><stop offset="0" stop-color="#FFF4C8"/><stop offset=".35" stop-color="#F0AC2F" stop-opacity=".55"/><stop offset="1" stop-color="#F0AC2F" stop-opacity="0"/></radialGradient>
+          <!-- aspersor: mangueira de descida + bico + leque de gotas -->
+          <g id="n-bico">
+            <path d="M0 0 V104" class="n-descida"/>
+            <rect x="-4" y="102" width="8" height="7" rx="2" class="n-cabeca"/>
+            <path d="M0 110 Q-34 104 -58 140 M0 110 Q-16 108 -26 146 M0 110 Q16 108 26 146 M0 110 Q34 104 58 140" class="n-leque"/>
+            <g class="n-gotas"><circle r="3.2"/><circle r="2.8"/><circle r="3.4"/><circle r="2.8"/><circle r="3.2"/><circle r="2.6"/><circle r="3"/><circle r="2.8"/></g>
+          </g>
+          <!-- uma torre do pivô (A), repetida ao longo do vão -->
+          <g id="n-torre">
+            <path d="M0 0 L-26 92 M0 0 L26 92 M-17 60 H17" class="n-aco"/>
+            <circle cx="-26" cy="96" r="9" class="n-roda"/><circle cx="26" cy="96" r="9" class="n-roda"/>
+            <path d="M-40 0 L0 0" class="n-aco"/>
+            <g class="n-lampada" data-lampada><circle r="30" fill="url(#n-luz)"/><circle r="4" fill="#FFF4C8"/></g>
+          </g>
+        </defs>
+        <rect width="1440" height="800" fill="url(#n-tarde)"/>
+        <rect width="1440" height="800" fill="url(#n-noite)" data-escuro/>
+        <g class="n-estrelas" data-estrelas>
+          <circle cx="120" cy="80" r="1.6"/><circle cx="260" cy="150" r="1.2"/><circle cx="410" cy="60" r="1.8"/><circle cx="560" cy="190" r="1.1"/><circle cx="700" cy="90" r="1.5"/><circle cx="860" cy="40" r="1.2"/><circle cx="980" cy="170" r="1.7"/><circle cx="1120" cy="70" r="1.3"/><circle cx="1260" cy="140" r="1.6"/><circle cx="1380" cy="50" r="1.2"/><circle cx="330" cy="260" r="1"/><circle cx="1040" cy="250" r="1.1"/><circle cx="640" cy="300" r="1"/><circle cx="1330" cy="280" r="1.2"/><circle cx="60" cy="230" r="1.1"/>
+        </g>
+        <g data-sol><circle cx="1120" cy="520" r="70" fill="#F7B860"/></g>
+        <mask id="n-crescente"><rect width="1440" height="800" fill="#fff"/><circle cx="1196" cy="141" r="30" fill="#000"/></mask>
+        <g data-lua><circle cx="1180" cy="150" r="34" fill="#F4EFD8" mask="url(#n-crescente)"/></g>
+        <!-- horizonte do Cerrado e a lavoura -->
+        <path d="M0 560 C200 540 340 552 520 546 C700 540 860 528 1040 540 C1220 552 1340 544 1440 548 V800 H0Z" fill="#2A1B1A"/>
+        <path d="M0 600 C300 588 640 596 960 590 C1180 586 1320 592 1440 590 V800 H0Z" fill="#23401F"/>
+        <path d="M0 640 H1440 M0 676 H1440 M0 716 H1440 M0 762 H1440" class="n-sulcos"/>
+        <!-- vão do pivô, visto de lado -->
+        <g class="n-pivo" data-n-pivo>
+          <path d="M60 470 Q260 440 470 470 Q680 440 890 470 Q1100 440 1310 470" class="n-tubo"/>
+          <path d="M60 470 Q260 440 470 470 Q680 440 890 470 Q1100 440 1310 470" class="n-trelica"/>
+          <g class="n-jatos">
+            <use href="#n-bico" x="120" y="470"/>
+            <use href="#n-bico" x="260" y="458"/>
+            <use href="#n-bico" x="400" y="466"/>
+            <use href="#n-bico" x="540" y="466"/>
+            <use href="#n-bico" x="680" y="458"/>
+            <use href="#n-bico" x="820" y="466"/>
+            <use href="#n-bico" x="960" y="466"/>
+            <use href="#n-bico" x="1100" y="458"/>
+            <use href="#n-bico" x="1240" y="466"/>
+          </g>
+          <use href="#n-torre" x="470" y="470"/>
+          <use href="#n-torre" x="890" y="470"/>
+          <use href="#n-torre" x="1310" y="470"/>
+        </g>
+      </svg>
+
+      <div class="wrap noite__inner">
+        <h2 class="noite__titulo" id="final-titulo" data-reveal>O pivô gira a noite toda. A conta pode pesar menos.</h2>
+        <p class="lead lead--claro" data-reveal>Cadastre a sua propriedade em poucos passos. Sem obra, sem investimento, sem taxa de adesão.</p>
+        <div class="noite__acoes" data-reveal>
+          <a class="btn btn--lg" data-cta href="https://www.netzenergia.com.br/jornada-do-cliente">Quero energia NETZ <svg class="ico" aria-hidden="true"><use href="#i-seta"/></svg></a>
+          <a class="link-claro" href="https://wa.me/553132689333?text=Ol%C3%A1!%20Sou%20irrigante%20e%20quero%20saber%20mais%20sobre%20a%20energia%20NETZ." target="_blank" rel="noopener noreferrer">Prefiro falar pelo WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="wrap rodape__grid">
+      <div>
+        <svg class="rodape__logo" viewBox="0 0 200 36.316" role="img" aria-label="NETZ Energia"><g transform="translate(-167.013 -58.845)" fill="currentColor"><path d="M167.309,58.845h3.839l22.879,29.1v-29.1h3.994V95.16h-3.268L171.3,65.382V95.16h-3.995Z" transform="translate(-0.296)"/><path d="M229.047,58.845H255.3V62.58H233.146v12.4h19.817v3.736H233.146v12.71h22.411V95.16h-26.51Z" transform="translate(-0.296)"/><path d="M294.157,62.632H281.966V58.845H310.5v3.788H298.307V95.161h-4.15Z" transform="translate(-0.296)"/><path d="M349.891,74.163h9.47l7.947-9.248v-6.07H337.685v7h19.351Z" transform="translate(-0.296)" fill="#F0AC2F"/><path d="M354.48,79.842h-9.47l-7.947,9.248V95.16h30.245v-7H347.335Z" transform="translate(-0.296)" fill="#F0AC2F"/></g></svg>
+        <p>Energia limpa e mais barata, sem obra e sem investimento.</p>
+      </div>
+      <div>
+        <h2 class="rodape__h">Contato</h2>
+        <ul>
+          <li><a href="tel:+553132689333">(31) 3268-9333</a></li>
+          <li>Segunda a sexta, das 10h às 17h</li>
+          <li><a href="https://www.netzenergia.com.br/" target="_blank" rel="noopener noreferrer">netzenergia.com.br</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="rodape__h">Redes</h2>
+        <ul>
+          <li><a href="https://www.instagram.com/netz_energia/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/company/82160958/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap rodape__base">
+      <nav class="rodape__legal" aria-label="Privacidade e termos">
+        <a href="politica-de-privacidade.html">Aviso de privacidade e cookies</a>
+        <a href="https://www.netzenergia.com.br/termos-de-utilizacao" target="_blank" rel="noopener noreferrer">Termos de utilização</a>
+        <button type="button" class="rodape__link-btn" data-cookie-acao="personalizar">Preferências de cookies</button>
+      </nav>
+      <p id="fontes" class="rodape__fontes">1. ANA e Inpe, mapeamento da agricultura irrigada por pivôs centrais (divulgado em dezembro de 2024): 2.200.960 hectares em 33.846 pivôs no Brasil, com Minas Gerais na liderança (637 mil hectares).</p>
+      <p>NETZ Energia® é uma marca registrada pela empresa NETZ ENERGIA LTDA.</p>
+      <p class="rodape__creditos">Vídeo de capa (domínio público): <a href="https://commons.wikimedia.org/wiki/File:20200728-NRCS-LSC-9001-Pivot_Irrigation.webm" target="_blank" rel="noopener noreferrer">pivô central, por USDA NRCS, via Wikimedia Commons</a>.</p>
+    </div>
+  </footer>
+
+  <a class="whats" href="https://wa.me/553132689333?text=Ol%C3%A1!%20Sou%20irrigante%20e%20quero%20saber%20mais%20sobre%20a%20energia%20NETZ." target="_blank" rel="noopener noreferrer" aria-label="Falar com a NETZ pelo WhatsApp">
+    <svg class="ico" aria-hidden="true"><use href="#i-whats"/></svg>
+  </a>
+
+  <section class="cookie" data-cookie-aviso hidden aria-labelledby="cookie-titulo" aria-describedby="cookie-texto">
+    <div class="cookie__texto">
+      <h2 id="cookie-titulo">Sua privacidade</h2>
+      <p id="cookie-texto">Usamos apenas o necessário para a página funcionar. Com a sua permissão, também podemos medir as visitas e mostrar anúncios mais relevantes. <a href="politica-de-privacidade.html">Saiba mais</a>.</p>
+    </div>
+    <div class="cookie__acoes">
+      <button type="button" class="cookie__btn cookie__btn--linha" data-cookie-acao="personalizar">Personalizar</button>
+      <button type="button" class="cookie__btn" data-cookie-acao="recusar">Recusar</button>
+      <button type="button" class="cookie__btn" data-cookie-acao="aceitar">Aceitar</button>
+    </div>
+  </section>
+
+  <dialog class="cookie-dialogo" data-cookie-dialogo aria-labelledby="pref-titulo">
+    <div class="cookie-dialogo__corpo">
+      <div class="cookie-dialogo__topo">
+        <h2 id="pref-titulo">Preferências de cookies</h2>
+        <button type="button" class="cookie-dialogo__fechar" data-cookie-acao="fechar" aria-label="Fechar sem salvar"><svg class="ico" aria-hidden="true"><use href="#i-fechar"/></svg></button>
+      </div>
+      <p class="cookie-dialogo__intro">Escolha o que podemos usar. Você pode mudar isso quando quiser pelo link no rodapé.</p>
+      <div class="pref">
+        <div class="pref__txt"><h3>Necessários</h3><p>Guardam a sua escolha sobre cookies, no seu próprio navegador. Sem eles a página não lembra a sua decisão.</p></div>
+        <span class="pref__fixo">Sempre ativos</span>
+      </div>
+      <label class="pref">
+        <span class="pref__txt"><span class="pref__h">Medição</span><span class="pref__p">Contam visitas e cliques de forma estatística, para entender o que funciona na página (ex.: Google Analytics).</span></span>
+        <input type="checkbox" class="pref__chave" data-cookie="medicao">
+      </label>
+      <label class="pref">
+        <span class="pref__txt"><span class="pref__h">Marketing</span><span class="pref__p">Medem o resultado dos anúncios e mostram anúncios mais relevantes para você (ex.: Google Ads).</span></span>
+        <input type="checkbox" class="pref__chave" data-cookie="marketing">
+      </label>
+      <div class="cookie-dialogo__acoes">
+        <button type="button" class="cookie__btn cookie__btn--linha" data-cookie-acao="recusar">Recusar todos</button>
+        <button type="button" class="cookie__btn cookie__btn--linha" data-cookie-acao="salvar">Salvar escolhas</button>
+        <button type="button" class="cookie__btn" data-cookie-acao="aceitar">Aceitar todos</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="js/vendor/gsap.min.js" defer></script>
+  <script src="js/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/consent.js" defer></script>
+</body>
+</html>

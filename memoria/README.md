@@ -5,6 +5,7 @@ Ao mudar uma decisão, atualize aqui e na memória do Claude Code.
 
 - [Café](project-netz-cafe.md): produto NETZ, marca, CTA, segurança/LGPD, decisões da LP de café
 - [Laranja](project-netz-laranja.md): paleta, simulador em caixas, ilustração 2D
+- [Irrigação](project-netz-irrigacao.md): LP por tema (pivô), simulador por hectare, animação do pivô e da noite
 - [Repositório e hub](project-repo-hub.md): GitHub e hub de todas as LPs
 - [Skill /nova-lp](project-skill-nova-lp.md): como novas LPs são criadas
 - [Skills de design](feedback-skill-landing-pages.md): qual skill de design usar em cada LP
