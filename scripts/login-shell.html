@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>NETZ Energia · Acesso</title>
+  <link rel="stylesheet" href="netz-laranja/css/fonts.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { visibility: hidden; }
+    html.pronto { visibility: visible; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px 16px;
+      background: radial-gradient(120% 80% at 80% 0%, #4A3399 0%, #35247C 40%, #1B1245 100%);
+      color: #fff; font-family: "Open Sans", system-ui, sans-serif; }
+    .acesso { width: 100%; max-width: 380px; }
+    .acesso__logo { height: 22px; width: auto; display: block; margin-bottom: 40px; }
+    h1 { font: 800 clamp(1.7rem, 6vw, 2.2rem)/1.1 Montserrat, sans-serif; letter-spacing: -.02em; margin: 0 0 10px; }
+    .acesso__sub { margin: 0 0 32px; color: #CFC6F2; line-height: 1.6; }
+    label { display: block; font: 700 .72rem/1 Montserrat, sans-serif; letter-spacing: .12em; text-transform: uppercase; color: #CFC6F2; margin: 0 0 8px; }
+    input { width: 100%; font: inherit; font-size: 1rem; color: #fff; background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.2); border-radius: 12px; padding: 13px 14px; margin: 0 0 20px; transition: border-color .2s; }
+    input:focus { outline: none; border-color: #F8A646; box-shadow: 0 0 0 3px rgba(248,166,70,.25); }
+    button { width: 100%; font: 700 1rem Montserrat, sans-serif; color: #1B1245; background: #F8A646; border: 0;
+      border-radius: 999px; padding: 15px; cursor: pointer; transition: transform .15s, filter .2s; }
+    button:hover { filter: brightness(1.06); }
+    button:active { transform: scale(.98); }
+    button:disabled { opacity: .7; cursor: progress; }
+    button:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+    .acesso__erro { min-height: 1.5em; margin: 14px 0 0; color: #FFB4A8; font-size: .92rem; }
+    @media (prefers-reduced-motion: reduce) { input, button { transition: none; } }
+  </style>
+</head>
+<body>
+  <main class="acesso" id="acesso" hidden>
+    <img class="acesso__logo" src="netz-laranja/img/logo-netz.svg" alt="NETZ Energia">
+    <h1>Landing pages NETZ</h1>
+    <p class="acesso__sub">Entre com o usuário e a senha da equipe para ver as páginas.</p>
+    <form id="form" novalidate>
+      <label for="usuario">Usuário</label>
+      <input id="usuario" name="username" autocomplete="username" autocapitalize="none" spellcheck="false" required>
+      <label for="senha">Senha</label>
+      <input id="senha" name="password" type="password" autocomplete="current-password" required>
+      <button type="submit" id="entrar">Entrar</button>
+      <p class="acesso__erro" id="erro" role="alert" aria-live="polite"></p>
+    </form>
+  </main>
+  <noscript><p style="visibility:visible">Ative o JavaScript para acessar estas páginas.</p></noscript>
+  <script>
+  (async () => {
+    const D = /*__DATA__*/null;
+    // O login vale só nesta aba (sessionStorage): fechar a aba ou abrir outra pede de novo.
+    const CHAVE = 'netz-acesso';
+    const VALIDADE = 8 * 60 * 60 * 1000;
+    const enc = new TextEncoder();
+    const bytes = (s) => Uint8Array.from(atob(s), (c) => c.charCodeAt(0));
+    const ler = () => { try { return JSON.parse(sessionStorage.getItem(CHAVE)); } catch { return null; } };
+    const salvar = (v) => { try { sessionStorage.setItem(CHAVE, JSON.stringify(v)); } catch {} };
+    const apagar = () => { try { sessionStorage.removeItem(CHAVE); } catch {} };
+
+    async function abrir(chave) {
+      const texto = new TextDecoder().decode(
+        await crypto.subtle.decrypt({ name: 'AES-GCM', iv: bytes(D.iv) }, chave, bytes(D.ct)));
+      // Com o parser ainda ativo, document.open() é ignorado e o conteúdo seria anexado à casca.
+      if (document.readyState === 'loading') {
+        await new Promise((ok) => document.addEventListener('DOMContentLoaded', ok, { once: true }));
+      }
+      document.open(); document.write(texto); document.close();
+    }
+    async function chaveSalva() {
+      const s = ler();
+      if (!s || !s.k || !(s.exp > Date.now())) return null;
+      return crypto.subtle.importKey('raw', bytes(s.k), 'AES-GCM', false, ['decrypt']);
+    }
+    function destinoSeguro() {
+      const n = new URLSearchParams(location.search).get('next');
+      return n && n.startsWith('/') && !n.startsWith('//') ? n : null;
+    }
+
+    const params = new URLSearchParams(location.search);
+    if (params.has('sair')) { apagar(); location.replace(location.pathname); return; }
+
+    try {
+      const chave = await chaveSalva();
+      if (chave) {
+        const destino = D.isHub && destinoSeguro();
+        if (destino) { location.replace(destino); return; }
+        await abrir(chave); return;
+      }
+    } catch { apagar(); }
+
+    if (!D.isHub) {
+      location.replace(D.hub + '?next=' + encodeURIComponent(location.pathname + location.hash));
+      return;
+    }
+
+    // Hub sem login: mostra o formulário.
+    document.getElementById('acesso').hidden = false;
+    document.documentElement.classList.add('pronto');
+    const form = document.getElementById('form');
+    const botao = document.getElementById('entrar');
+    const erro = document.getElementById('erro');
+    document.getElementById('usuario').focus();
+
+    form.addEventListener('submit', async (ev) => {
+      ev.preventDefault();
+      const usuario = form.username.value.trim();
+      const senha = form.password.value;
+      if (!usuario || !senha) { erro.textContent = 'Preencha usuário e senha.'; return; }
+      botao.disabled = true; botao.textContent = 'Entrando…'; erro.textContent = '';
+      try {
+        const base = await crypto.subtle.importKey('raw', enc.encode(usuario + '\n' + senha), 'PBKDF2', false, ['deriveKey']);
+        const chave = await crypto.subtle.deriveKey(
+          { name: 'PBKDF2', salt: enc.encode(D.salt), iterations: D.it, hash: 'SHA-256' },
+          base, { name: 'AES-GCM', length: 256 }, true, ['decrypt']);
+        await crypto.subtle.decrypt({ name: 'AES-GCM', iv: bytes(D.iv) }, chave, bytes(D.ct));
+        const bruta = new Uint8Array(await crypto.subtle.exportKey('raw', chave));
+        salvar({ k: btoa(String.fromCharCode(...bruta)), exp: Date.now() + VALIDADE });
+        const destino = destinoSeguro();
+        if (destino) { location.replace(destino); return; }
+        history.replaceState(null, '', location.pathname);
+        await abrir(chave);
+      } catch {
+        erro.textContent = 'Usuário ou senha incorretos.';
+        botao.disabled = false; botao.textContent = 'Entrar';
+        form.password.value = ''; form.password.focus();
+      }
+    });
+  })();
+  </script>
+</body>
+</html>

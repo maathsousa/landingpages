@@ -1,0 +1,20 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "montserrat",
+        "createdAt": "2026-11-13T17:33:54.610Z",
+        "reason": "project decision: .claude/skills/nova-lp/SKILL.md L21 defines NETZ fonts Montserrat (titles) + Open Sans (body)"
+      },
+      {
+        "rule": "overused-font",
+        "value": "open sans",
+        "createdAt": "2026-11-13T17:33:55.391Z",
+        "reason": "project decision: .claude/skills/nova-lp/SKILL.md L21 defines NETZ fonts Montserrat (titles) + Open Sans (body)"
+      }
+    ]
+  }
+}
