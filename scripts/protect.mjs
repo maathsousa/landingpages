@@ -25,6 +25,8 @@ const ITERATIONS = 600000;
 // O que vai para o ar. Todo o resto (memoria/, .claude/, graphify-out/, PRODUCT.md...) fica de fora.
 const include = ['index.html', 'hub.css', 'hub-img',
   ...fs.readdirSync(ROOT).filter((n) => n.startsWith('netz-') && fs.statSync(n).isDirectory())];
+// Pastas publicadas abertas, sem login (páginas de campanha que vão para o público).
+const PUBLICAS = ['netz-black-friday'];
 const skip = (name) => name === '.impeccable' || name === '.DS_Store' || name === 'Thumbs.db' || name === 'desktop.ini';
 
 fs.rmSync(OUT, { recursive: true, force: true });
@@ -48,6 +50,10 @@ const htmlFiles = [];
     else if (e.name.endsWith('.html')) htmlFiles.push(p);
   }
 })(OUT);
+const publica = (file) => PUBLICAS.includes(path.relative(OUT, file).split(path.sep)[0]);
+for (let i = htmlFiles.length - 1; i >= 0; i--) {
+  if (publica(htmlFiles[i])) { console.log(`aberta (sem login): ${path.relative(OUT, htmlFiles[i])}`); htmlFiles.splice(i, 1); }
+}
 
 const shell = fs.readFileSync(path.join(ROOT, 'scripts', 'login-shell.html'), 'utf8');
 for (const file of htmlFiles) {
