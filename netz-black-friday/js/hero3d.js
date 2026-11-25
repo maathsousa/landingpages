@@ -404,7 +404,7 @@ function init() {
   const marcos = Array.from(hero.querySelectorAll('[data-marco]'));
   let etapaAtual = -1;
   function marcaEtapa(p) {
-    const n = p < 0.13 ? 0 : p < 0.44 ? 1 : p < 0.71 ? 2 : 3;
+    const n = p < 0.13 ? 0 : p < 0.71 ? 1 : 2; // usina e rede dividem a mesma etapa de texto
     hero.classList.toggle('ja-rolou', p > 0.02);
     if (n === etapaAtual) return;
     etapaAtual = n;
