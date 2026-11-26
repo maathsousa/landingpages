@@ -1,0 +1,52 @@
+/* Página de aviso de privacidade e cookies: leitura calma, mesma identidade da LP */
+.legal { background: var(--polpa); }
+.legal__topo { background: var(--roxo-900); color: var(--branco); }
+.legal__topo-in { display: flex; align-items: center; justify-content: space-between; gap: 20px; height: 72px; }
+.legal__logo { display: flex; align-items: center; gap: 12px; color: var(--branco); text-decoration: none; }
+.legal__logo svg { width: 110px; height: auto; }
+.legal__voltar { display: inline-flex; align-items: center; gap: 8px; font-family: var(--f-titulo); font-weight: 600; font-size: .9rem; color: rgba(255, 255, 255, .88); text-decoration: none; }
+.legal__voltar .ico { width: 18px; height: 18px; }
+.legal__voltar:hover { color: var(--laranja-claro); }
+@media (max-width: 520px) { .legal__voltar { font-size: 0; gap: 0; } .legal__voltar .ico { width: 22px; height: 22px; } }
+
+.legal__conteudo { max-width: calc(760px + var(--gutter) * 2); padding-block: clamp(48px, 7vw, 88px); }
+.legal__kicker { font-family: var(--f-titulo); font-weight: 700; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--laranja-escuro); }
+.legal h1 { font-weight: 800; font-size: clamp(2rem, 4.4vw, 3rem); line-height: 1.08; letter-spacing: -.025em; color: var(--roxo); text-wrap: balance; }
+.legal__atualizado { margin-top: 12px; font-size: .9rem; color: var(--tinta-2); }
+.legal__lead { margin-top: 28px; font-size: 1.12rem; color: var(--tinta); }
+/* links só do conteúdo claro; topo, contato e rodapé (fundo escuro) têm cores próprias */
+.legal__conteudo a { color: var(--roxo); text-decoration-color: var(--laranja); text-underline-offset: 3px; }
+.legal__conteudo a:hover { text-decoration-color: var(--laranja-claro); }
+
+.legal__indice { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; padding-bottom: 8px; }
+.legal__indice a { padding: 7px 14px; border-radius: 999px; background: var(--polpa-2); font-size: .88rem; font-weight: 600; text-decoration: none; color: var(--roxo); }
+.legal__indice a:hover { background: var(--linha); }
+
+.legal section { margin-top: 48px; scroll-margin-top: 24px; }
+.legal h2 { font-size: 1.35rem; font-weight: 800; color: var(--roxo); letter-spacing: -.01em; }
+.legal section p, .legal section li { margin-top: 12px; color: var(--tinta); max-width: 68ch; }
+.legal ul { margin-top: 8px; padding-left: 1.2em; list-style: disc; }
+.legal li::marker { color: var(--laranja); }
+.legal__colunas { columns: 2 240px; column-gap: 32px; }
+.legal__colunas li { break-inside: avoid; margin-top: 6px; }
+
+.legal__tabela { margin-top: 18px; border: 1px solid var(--linha); border-radius: 14px; overflow: hidden; background: var(--branco); }
+.legal__linha { display: grid; grid-template-columns: 1fr; gap: 4px; padding: 14px 18px; border-top: 1px solid var(--linha); font-size: .94rem; }
+.legal__linha:first-child { border-top: 0; }
+.legal__linha--cab { display: none; }
+@media (min-width: 680px) {
+  .legal__linha { grid-template-columns: 9rem 1.3fr 1fr; gap: 16px; }
+  .legal__linha--cab { display: grid; background: var(--polpa-2); font-family: var(--f-titulo); font-weight: 700; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--laranja-escuro); }
+}
+
+.legal__btn-link { border: 0; background: none; padding: 0; font: inherit; font-weight: 600; color: var(--roxo); text-decoration: underline; text-decoration-color: var(--laranja); text-underline-offset: 3px; cursor: pointer; }
+.legal__btn-link:hover { text-decoration-color: var(--laranja-claro); }
+
+.legal__contato { padding: 28px; border-radius: var(--r-bloco); background: var(--roxo); }
+.legal .legal__contato h2 { color: var(--branco); }
+.legal .legal__contato p { color: rgba(255, 255, 255, .86); }
+.legal .legal__contato a { color: var(--laranja-claro); text-decoration-color: rgba(248, 166, 70, .55); }
+.legal__email { font-family: var(--f-titulo); font-size: 1.3rem; font-weight: 700; }
+
+.rodape--legal { padding-top: 0; }
+.rodape--legal .rodape__base { border-top: 0; padding-bottom: 40px; }

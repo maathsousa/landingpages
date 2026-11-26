@@ -59,13 +59,34 @@
     const apagar = () => { try { sessionStorage.removeItem(CHAVE); } catch {} };
 
     async function abrir(chave) {
-      const texto = new TextDecoder().decode(
+      let texto = new TextDecoder().decode(
         await crypto.subtle.decrypt({ name: 'AES-GCM', iv: bytes(D.iv) }, chave, bytes(D.ct)));
       // Com o parser ainda ativo, document.open() é ignorado e o conteúdo seria anexado à casca.
       if (document.readyState === 'loading') {
         await new Promise((ok) => document.addEventListener('DOMContentLoaded', ok, { once: true }));
       }
+      // Script síncrono escrito por document.write corta o resto da página (aconteceu na LP da batata):
+      // no <body>, todo <script src> sem defer/async/type passa a carregar com defer (mesma ordem de execução).
+      var corpo = texto.search(/<body[\s>]/i);
+      if (corpo > -1) {
+        texto = texto.slice(0, corpo) + texto.slice(corpo).replace(/<script(?![^>]*\b(?:defer|async|type=))(?=[^>]*\bsrc=)/gi, '<script defer');
+      }
       document.open(); document.write(texto); document.close();
+      // O navegador não executa <script type="module"> escrito por document.write:
+      // recria cada um quando a página nova termina de ser montada.
+      var recriaModulos = function () {
+        document.querySelectorAll('script[type="module"][src]').forEach(function (velho) {
+          var novo = document.createElement('script');
+          // endereço único: o navegador não reaproveita um módulo que já tentou carregar
+          novo.type = 'module'; novo.src = velho.src + (velho.src.indexOf('?') > -1 ? '&' : '?') + 'p=' + Date.now();
+          velho.replaceWith(novo);
+        });
+      };
+      // Sem DOMContentLoaded aqui: numa página escrita por document.write ele nem sempre dispara.
+      (function aguarda(n) {
+        if (document.readyState === 'loading' && n < 200) setTimeout(aguarda, 30, n + 1);
+        else recriaModulos();
+      })(0);
     }
     async function chaveSalva() {
       const s = ler();

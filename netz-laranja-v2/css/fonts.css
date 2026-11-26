@@ -1,0 +1,23 @@
+/* Fontes hospedadas no próprio site (sem Google Fonts): o IP do visitante não vai para terceiros.
+   Montserrat e Open Sans, licença SIL Open Font License 1.1. Subconjunto latino (inclui ç, ã, é etc.). */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500 800;
+  font-display: swap;
+  src: url(../fonts/montserrat-latin.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(../fonts/opensans-latin.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/opensans-italic-latin.woff2) format('woff2');
+}
